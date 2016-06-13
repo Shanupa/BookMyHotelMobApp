@@ -7,7 +7,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="BookMyHotel"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
@@ -26,7 +26,31 @@
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".MainMenuActivity"
-            android:label="@string/title_activity_main_menu" >
+            android:label="Welcome" >
+        </activity>
+        <activity
+            android:name=".AboutUsActivity"
+            android:label="@string/title_activity_about_us"
+            android:parentActivityName=".MainMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sourcey.materiallogindemo.MainMenuActivity" />
+        </activity>
+        <activity
+            android:name=".FbActivity"
+            android:label="@string/title_activity_fb"
+            android:parentActivityName=".MainMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sourcey.materiallogindemo.MainMenuActivity" />
+        </activity>
+        <activity
+            android:name=".ListActivity"
+            android:label="@string/title_activity_list"
+            android:parentActivityName=".MainMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sourcey.materiallogindemo.MainMenuActivity" />
         </activity>
     </application>
 

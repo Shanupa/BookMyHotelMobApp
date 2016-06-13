@@ -1,61 +1,49 @@
 package com.sourcey.materiallogindemo;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+import android.webkit.WebView;
+import android.widget.Button;
 
 import com.sourcey.materiallogindemo.R;
 
-public class MainMenuActivity extends AppCompatActivity {
-    private static ImageView imgabout;
-    private static ImageView imgfb;
+public class FbActivity extends AppCompatActivity {
+    private static Button btnFB;
+    private static WebView wbFB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
-        onClickAbout();
-        onClickFb();
-
+        setContentView(R.layout.activity_fb);
+        urlOpenFB();
 
     }
 
-    public void onClickAbout(){
-        imgabout=(ImageView)findViewById(R.id.img_about);
-        imgabout.setOnClickListener(new View.OnClickListener() {
+    public void urlOpenFB(){
+        btnFB=(Button)findViewById(R.id.button_fb);
+        wbFB=(WebView)findViewById(R.id.webView_FB);
+
+        btnFB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(MainMenuActivity.this, AboutUsActivity.class);
-                startActivity(intent2);
-                finish();
-            }
-        });
+                String url = "http://www.youtube.com";
+                wbFB.getSettings().setLoadsImagesAutomatically(true);
+                wbFB.getSettings().setJavaScriptEnabled(true);
+                wbFB.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+                wbFB.loadUrl(url);
 
-
-    }
-
-    public void onClickFb(){
-        imgfb=(ImageView)findViewById(R.id.img_fb);
-        imgfb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent3 = new Intent(MainMenuActivity.this, FbActivity.class);
-                startActivity(intent3);
-                finish();
 
             }
         });
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_fb, menu);
         return true;
     }
 

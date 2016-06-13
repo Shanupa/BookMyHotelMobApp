@@ -84,7 +84,6 @@ public class LoginActivity extends AppCompatActivity {
         PostResponseAsyncTask task1=new PostResponseAsyncTask(LoginActivity.this,postData, new AsyncResponse() {
             @Override
             public void processFinish(String s) {
-                Log.d(LOG, s);
                 if (s.contains("success")) {
                     Toast.makeText(LoginActivity.this, "Success Login", Toast.LENGTH_LONG).show();
                     Intent intent1 = new Intent(LoginActivity.this, MainMenuActivity.class);
